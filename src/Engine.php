@@ -12,12 +12,12 @@ class Engine
      */
     private $key = 'flash_messages';
 
-    private $types = [
+    private $types = array(
         'error',
         'warning',
         'info',
         'success',
-    ];
+    );
 
     private $template;
 
@@ -31,7 +31,7 @@ class Engine
         $this->template = $template;
 
         if ( ! array_key_exists($this->key, $_SESSION)) {
-            $_SESSION[$this->key] = [];
+            $_SESSION[$this->key] = array();
         }
     }
 
@@ -73,7 +73,7 @@ class Engine
         }
 
         if ( ! array_key_exists($type, $_SESSION[$this->key])) {
-            $_SESSION[$this->key][$type] = [];
+            $_SESSION[$this->key][$type] = array();
         }
 
         $_SESSION[$this->key][$type][] = $message;
@@ -121,7 +121,7 @@ class Engine
         if ( ! is_null($type)) {
             return ! empty($_SESSION[$this->key][$type]);
         }
-        
+
         foreach ($this->types as $type) {
             if ( ! empty($_SESSION[$this->key][$type])) {
                 return true;
@@ -141,7 +141,7 @@ class Engine
     public function clear($type = null)
     {
         if (is_null($type)) {
-            $_SESSION[$this->key] = [];
+            $_SESSION[$this->key] = array();
         } else {
             unset($_SESSION[$this->key][$type]);
         }

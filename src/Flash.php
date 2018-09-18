@@ -61,10 +61,10 @@ class Flash
      */
     protected static function invoke($method, array $arguments)
     {
-        $target = [
+        $target = array(
             self::$engine,
             $method,
-        ];
+        );
 
         return call_user_func_array($target, $arguments);
     }
