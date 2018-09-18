@@ -7,7 +7,7 @@ require_once 'BadTemplate.php';
 
 class FactoryTest extends PHPUnit_Framework_TestCase
 {
-    private $templates = [];
+    private $templates = array();
 
     /**
      * Prepare setup before tests.

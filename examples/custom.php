@@ -25,7 +25,7 @@ class CustomTemplate extends BaseTemplate implements TemplateInterface
     }
 }
 
-flash()->setTemplate(new CustomTemplate)->error(['Invalid email!', 'Invalid username!'])
+flash()->setTemplate(new CustomTemplate)->error(array('Invalid email!', 'Invalid username!'))
     ->warning('Warning message.')
     ->info('Info message.')
     ->success('Success message!');

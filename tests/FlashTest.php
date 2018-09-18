@@ -190,10 +190,10 @@ class FlashTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function testWorkWithArrays()
     {
-        $errors = [
+        $errors = array(
             'Invalid name',
             'Invalid email',
-        ];
+        );
 
         flash($errors, 'error');
 
